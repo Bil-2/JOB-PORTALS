@@ -89,7 +89,7 @@ PORT=4000
 NODE_ENV=development
 
 # Database
-DB_URL=mongodb+srv://username:password@cluster.mongodb.net/jobzee?retryWrites=true&w=majority
+DB_URL=
 
 # JWT Configuration
 JWT_SECRET_KEY=your_super_secure_jwt_secret_key_here
