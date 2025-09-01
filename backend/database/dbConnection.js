@@ -1,4 +1,4 @@
-import mongoose from "mongoose"; //just mongoose import!
+import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -6,17 +6,14 @@ dotenv.config();
 const dbConnection = () => {
    mongoose.connect(process.env.DB_URL, {
       dbName: "Job_Portal",
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
       serverSelectionTimeoutMS: 30000, // 30 seconds
       socketTimeoutMS: 45000, // 45 seconds
-      bufferMaxEntries: 0,
       maxPoolSize: 10,
       minPoolSize: 5
-   }).then(() => { //agar connect ho jaye toh!
+   }).then(() => {
       console.log("MongoDB Connected Successfully !")
    }).catch((error) => {
-      console.log(`Failed to connect to MongoDB: ${error.message}`) //warna error de do console me!
+      console.log(`Failed to connect to MongoDB: ${error.message}`)
       console.log("Please check your database connection string and network access")
       process.exit(1);
    })
